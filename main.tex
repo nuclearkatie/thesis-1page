@@ -1,0 +1,117 @@
+\documentclass[10pt,a4paper]{protocol}
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{xspace}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{Bright}{HTML}{c5050c}
+\definecolor{DkRed}{HTML}{9b0000}
+\definecolor{Black}{HTML}{111111}
+\definecolor{DkGrey}{HTML}{282728}
+\definecolor{LightGrey}{HTML}{494949}
+\colorlet{heading}{Bright}
+\colorlet{accent}{DkGrey}
+\colorlet{emphasis}{Black}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \risk if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faSpinner}
+
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
+\newcommand{\Trailmap}{\textsc{Trailmap}\xspace}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{State-Level Nuclear Fuel Cycle Simulations for Safeguards Applications}
+\tagline{Summary of dissertation proposal. LA-UR-22-31459}
+%\made{October 2 2017}
+\logo{5.cm}{"ENGIPHYS_color-center"}
+
+
+\docinfo{%
+  % can add more \addedtopeople
+  \madeby{Katie Mummah}{mummah@wisc.edu, mummah@lanl.gov}{\today}
+  %\addedto{John Smith}{abv1@uni.ac.uk}{October 3, 2017}
+}
+
+\purpose{
+    A high priority in international safeguards is to support more effective processing of growing amounts and streams of data while reducing analyst workflow. However, key information such as State accountancy reports and declarations are safeguards-confidential and not available to the general R\&D community for use in developing new data processing tools and methods. This dissertation modifies and develops tools for cradle-to-grave nuclear fuel cycle modeling to generate sophisticated and realistic synthetic State accounting reports.
+%	I propose several tools built on or within the \Cyclus nuclear fuel cycle simulation platform that enable system-scale modeling and analysis to aid nuclear safeguards approaches and evaluation. Previous efforts to integrate safeguards methodologies and analysis into nuclear fuel cycle simulators have focused on individual facility models, while this proposal integrates several existing or novel safeguards methodologies that require cradle-to-grave fuel cycle modeling into or on top of the \Cyclus system.
+} % add a short description of the purpose for this protocol
+
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makeheader
+\end{fullwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \need.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \need title in the "main" bar.
+\need[sidebar]{Proposed Chapters}
+
+\step{1}{Demonstration of Acquisition Pathway Analysis built on Cyclus infrastructure, ("APA")}{20}
+This chapter demonstrates ability to conduct basic APA techniques using the \Cyclus fuel cycle simulator. %Material flowing through a nuclear fuel cycle can be represented by a directed graph. From a user-specified fuel cycle, a digraph is generated representing all possible commodity trades between facilities. Graph traversal techniques are used to enumerate all pathways for material to flow through the given fuel cycle. Pathways that produce weapons-usable material can be filtered and further analyzed. This method works for any fuel cycle that can be modeled using the \Cyclus NFC simulator.%, including ones that use closed facility models that are not part of the open source \Cyclus and \Cycamore facility libraries.
+
+\divider
+
+\step{2}{Full fuel cycle case studies for use in fuel cycle simulator development and demonstration ("Case Studies")}{35}
+Previous nuclear fuel cycle simulation literature has  focused on future fuel cycle transition scenarios for individual States and regions, providing valuable technological and policy-related information. In the case of international safeguards research however, it can be important to demonstrate software capabilities on a wide landscape of potential fuel cycles. A representative set of synthetic case studies across an intentionally-diverse set of reactor designs and fuel cycle complexity will be developed. 
+
+\divider
+
+\step{3}{Enhanced facility behaviors for use in \Cyclus facilities ("Behaviors")}{40}
+
+This chapter enhances nuclear fuel cycle facility and material balance area (MBA) models to incorporate more complex material movement behavior. Instead of identifying a single step in the nuclear fuel cycle and increasing agent fidelity, this work will enact a more generic set of behaviors that will be useful across the nuclear fuel cycle, each arising from a careful reflection of system behavior.
+
+\divider
+
+\step{4}{Creating synthetic fuel cycle data in the style and with the requisite information of State's accountancy reports to the IAEA ("Code 10")}{25}
+
+ A novel mechanism to create synthetic, but IAEA format and content-compatible, State-like accounting reports that include realistic types of nuclear material inventory changes and movements for the purpose of testing and developing algorithms to detect and characterize inconsistencies and disruptions that could be associated with illicit proliferation-type activities.
+ 
+\divider
+ 
+\step{5}{Demonstration and Summary}
+
+Each of the above chapters contributes to an enhanced ability to model realistic movements of nuclear material throughout the fuel cycle and will be combined in a final demonstration chapter highlighting the new tools and capabilities. APA will be conducted on each of the case studies. Several of the case studies will have a disruption introduced in one facility to interrupt their regular operational pattern, or cadence of operations. After converting simulations to the Code 10 format to match realistic State accounting reports, time series analysis and forecasting techniques will be used to demonstrate how the enhanced behaviors contribute further to the ability to develop new methods for identification of errors and unexplained patterns in State accountancy reports.
+%Comparing the facility behavior and disruption propagation with and without the enhanced behaviors will reveal how much more realistically f
+%\pagebreak
+%\clearpage
+
+%\need[otherinfo]{Sources}
+
+%\nocite{*}
+
+%\printbibliography
+
+
+%\divider
+
+
+%% If the NEXT page doesn't start with a \need but you'd
+%% still like to add a sidebar, then use this command on THIS
+%% page to add it. The optional argument lets you pull up the
+%% sidebar a bit so that it looks aligned with the top of the
+%% main column.
+% \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}
